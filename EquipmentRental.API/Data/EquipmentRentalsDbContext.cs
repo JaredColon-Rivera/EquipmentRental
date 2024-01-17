@@ -7,11 +7,11 @@ namespace EquipmentRental.API.Data
     {
         public EquipmentRentalsDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
         {
-            
-        
+
+
         }
 
-        public DbSet<Customer> Customers  { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Equipment> EquipmentRentals { get; set; }
         public DbSet<Location> Locations { get; set; }
     }
