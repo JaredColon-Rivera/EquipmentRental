@@ -1,4 +1,6 @@
 using EquipmentRental.API.Data;
+using EquipmentRental.API.Mappings;
+using EquipmentRental.API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +12,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// SQL Database Connections
 builder.Services.AddDbContext<EquipmentRentalsDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("EquipmentRentalsConnectionString")));
+
+// Customer Interface and Repository
+builder.Services.AddScoped<ICustomerRepository, SQLCustomerRepository>();
+
+// Equipment Rentals Interface and Repository
+builder.Services.AddScoped<IEquipmentRepository, SQLEquipmentRepository>();
+
+// Mapping Profiles
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
+
 
 var app = builder.Build();
 
