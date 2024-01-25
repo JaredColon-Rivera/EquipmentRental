@@ -5,6 +5,6 @@
         public Guid Id { get; set; }
         public string City { get; set; }
         public string StateCode { get; set; }
-        public string Store { get; set; }
+        public string StoreName { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace EquipmentRental.API.Models.Domain
+﻿using EquipmentRental.API.Models.DTO;
+
+namespace EquipmentRental.API.Models.Domain
 {
     public class Equipment
     {
@@ -11,7 +13,7 @@
         public Guid CustomerId { get; set; }
         public Guid LocationId { get; set; }
 
-        public Customer Customer { get; set; }
+        public Customer? Customer { get; set; }
         public Location Location { get; set; }
     }
 }

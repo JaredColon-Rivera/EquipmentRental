@@ -13,26 +13,26 @@ namespace EquipmentRental.API.Repositories
         {
             this.dbContext = dbContext;
         }
-        public async Task<List<Equipment>> GetAllEquipmentsAsync()
+        public async Task<List<Equipment>> GetAllEquipmentRentalsAsync()
         {
-           return await dbContext.EquipmentRentals.ToListAsync();
+           return await dbContext.EquipmentRentals.Include("Customer").Include("Location").ToListAsync();
         }
 
-        public async Task<Equipment?> GetEquipmentByIdAsync(Guid id)
+        public async Task<Equipment?> GetEquipmentRentalByIdAsync(Guid id)
         {
-            return await dbContext.EquipmentRentals.FirstOrDefaultAsync(x => x.Id == id);
+            return await dbContext.EquipmentRentals.Include("Customer").Include("Location").FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<Equipment> CreateEquipmentAsync(Equipment equipment)
+        public async Task<Equipment> CreateEquipmentRentalAsync(Equipment equipment)
         {
             await dbContext.EquipmentRentals.AddAsync(equipment);
             await dbContext.SaveChangesAsync();
             return equipment;
         }
 
-        public async Task<Equipment?> UpdateEquipmentAsync(Guid id, Equipment equipment)
+        public async Task<Equipment?> UpdateEquipmentRentalAsync(Guid id, Equipment equipment)
         {
-            var existingEquipment = await GetEquipmentByIdAsync(id);
+            var existingEquipment = await GetEquipmentRentalByIdAsync(id);
 
             if (existingEquipment == null) return null;
 
@@ -40,16 +40,16 @@ namespace EquipmentRental.API.Repositories
             existingEquipment.Description = equipment.Description;
             existingEquipment.Price = equipment.Price;
             existingEquipment.Rented = equipment.Rented;
-            existingEquipment.Customer = equipment.Customer;
-            existingEquipment.Location = equipment.Location;
+            existingEquipment.CustomerId = equipment.CustomerId;
+            existingEquipment.LocationId = equipment.LocationId;
 
             await dbContext.SaveChangesAsync();
             return existingEquipment;
         }
 
-        public async Task<Equipment?> DeleteEquipmentAsync(Guid id)
+        public async Task<Equipment?> DeleteEquipmentRentalAsync(Guid id)
         {
-            var existingEquipment = await GetEquipmentByIdAsync(id);
+            var existingEquipment = await GetEquipmentRentalByIdAsync(id);
 
             if (existingEquipment == null) return null;
 

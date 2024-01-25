@@ -8,11 +8,18 @@ namespace EquipmentRental.API.Mappings
     {
         public AutoMapperProfiles()
         {
+            // Customer Mappings
             CreateMap<Customer, CustomerDTO>().ReverseMap();
             CreateMap<AddCustomerDTO, Customer>().ReverseMap();
             CreateMap<UpdateCustomerDTO, Customer>().ReverseMap();
 
+            // Equipment Mappings
             CreateMap<Equipment, EquipmentDTO>().ReverseMap();
+            CreateMap<AddEquipmentDTO, Equipment>().ReverseMap();
+            CreateMap<UpdateEquipmentDTO, Equipment>().ReverseMap();
+
+            // Location Mappings
+            CreateMap<Location, LocationDTO>().ReverseMap();
         }
     }
 }

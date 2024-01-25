@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace EquipmentRental.API.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateCustomer : Migration
+    public partial class Fixtables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,7 +35,7 @@ namespace EquipmentRental.API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StateCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Store = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    StoreName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,6 +69,16 @@ namespace EquipmentRental.API.Migrations
                         principalTable: "Locations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Locations",
+                columns: new[] { "Id", "City", "StateCode", "StoreName" },
+                values: new object[,]
+                {
+                    { new Guid("58dbaac0-95e6-489b-9114-596ac3cde3b7"), "Milwaukee", "WI", "Alex's Pro shop" },
+                    { new Guid("6c2d872c-ba68-49c0-930b-acd51b7d1cbc"), "Chicago", "IL", "Mike's Outdoor" },
+                    { new Guid("b5b23282-eed7-43db-b998-8c9093a4ac3e"), "Kenosha", "WI", "Bob's Camping Store" }
                 });
 
             migrationBuilder.CreateIndex(

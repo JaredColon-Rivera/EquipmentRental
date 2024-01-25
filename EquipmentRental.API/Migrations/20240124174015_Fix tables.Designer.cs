@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EquipmentRental.API.Migrations
 {
     [DbContext(typeof(EquipmentRentalsDbContext))]
-    [Migration("20240117175709_Update Customer")]
-    partial class UpdateCustomer
+    [Migration("20240124174015_Fix tables")]
+    partial class Fixtables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,13 +101,36 @@ namespace EquipmentRental.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Store")
+                    b.Property<string>("StoreName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Locations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("6c2d872c-ba68-49c0-930b-acd51b7d1cbc"),
+                            City = "Chicago",
+                            StateCode = "IL",
+                            StoreName = "Mike's Outdoor"
+                        },
+                        new
+                        {
+                            Id = new Guid("58dbaac0-95e6-489b-9114-596ac3cde3b7"),
+                            City = "Milwaukee",
+                            StateCode = "WI",
+                            StoreName = "Alex's Pro shop"
+                        },
+                        new
+                        {
+                            Id = new Guid("b5b23282-eed7-43db-b998-8c9093a4ac3e"),
+                            City = "Kenosha",
+                            StateCode = "WI",
+                            StoreName = "Bob's Camping Store"
+                        });
                 });
 
             modelBuilder.Entity("EquipmentRental.API.Models.Domain.Equipment", b =>

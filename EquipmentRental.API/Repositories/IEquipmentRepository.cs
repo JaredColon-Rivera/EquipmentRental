@@ -4,10 +4,10 @@ namespace EquipmentRental.API.Repositories
 {
     public interface IEquipmentRepository
     {
-        Task<List<Equipment>> GetAllEquipmentsAsync();
-        Task<Equipment?> GetEquipmentByIdAsync(Guid id);
-        Task<Equipment> CreateEquipmentAsync(Equipment equipment);
-        Task<Equipment?> UpdateEquipmentAsync(Guid id, Equipment equipment);
-        Task<Equipment?> DeleteEquipmentAsync(Guid id);
+        Task<List<Equipment>> GetAllEquipmentRentalsAsync();
+        Task<Equipment?> GetEquipmentRentalByIdAsync(Guid id);
+        Task<Equipment> CreateEquipmentRentalAsync(Equipment equipment);
+        Task<Equipment?> UpdateEquipmentRentalAsync(Guid id, Equipment equipment);
+        Task<Equipment?> DeleteEquipmentRentalAsync(Guid id);
     }
 }

@@ -101,7 +101,7 @@ namespace EquipmentRental.API.Controllers
 
         }
 
-        // Delete Region
+        // Delete Customer
         // DELETE: https://localhost:1234/api/customers/{id}
         [HttpDelete]
         [Route("{id:Guid}")]
