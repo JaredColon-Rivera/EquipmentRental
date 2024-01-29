@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EquipmentRental.API.CustomActionFilters;
 using EquipmentRental.API.Data;
 using EquipmentRental.API.Models.Domain;
 using EquipmentRental.API.Models.DTO;
@@ -63,6 +64,7 @@ namespace EquipmentRental.API.Controllers
         // POST to Create new Equipment
         // POST: https//localhost:1234/api/equipmentrentals
         [HttpPost]
+        [ValidateModel]
         public async Task<IActionResult> CreateEquipmentRental([FromBody] AddEquipmentDTO addEquipmentDTO)
         {
             // Map or convert DTO to domain model
@@ -81,6 +83,7 @@ namespace EquipmentRental.API.Controllers
         // PUT: https://localhost:1234/api/equipmentrentals/{id}
         [HttpPut]
         [Route("{id:Guid}")]
+        [ValidateModel]
         public async Task<IActionResult> UpdateEquipmentRental([FromRoute] Guid id, [FromBody] UpdateEquipmentDTO updateEquipmentDTO)
         {
             // Map DTO to domain model
