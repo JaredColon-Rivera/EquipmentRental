@@ -9,7 +9,7 @@ namespace EquipmentRental.API.Models.DTO
         public string FirstName { get; set; }
         
         [Required]
-        [MinLength(20, ErrorMessage = "Last Name can only be a maximum of 20 characters")]
+        [MaxLength(20, ErrorMessage = "Last Name can only be a maximum of 20 characters")]
         public string LastName { get; set; }
        
         [Required]
@@ -17,7 +17,6 @@ namespace EquipmentRental.API.Models.DTO
         public string Email { get; set; }
       
         [Required]
-        [Phone]
         public string PhoneNumber { get; set; }
     }
 }

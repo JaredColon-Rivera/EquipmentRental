@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EquipmentRental.UI.Models.DTOs.EquipmentDTO>
+@{
+}
+
+<h1 class="mt-3">Equipment Rentals</h1>
+
+<table class="tabel table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Rented</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var equipment in Model)
+        {
+            <tr>
+                <td>@equipment.Id</td>
+                <td>@equipment.Name</td>
+                <td>@equipment.Description</td>
+                <td>@equipment.Price</td>
+                <td>@equipment.Rented</td>
+            </tr>
+        }
+    </tbody>
+</table>

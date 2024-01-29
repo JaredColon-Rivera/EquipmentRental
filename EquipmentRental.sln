@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmentRental.API", "EquipmentRental.API\EquipmentRental.API.csproj", "{FC6A55FE-A6E1-4335-8B02-FD70834229CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquipmentRental.API", "EquipmentRental.API\EquipmentRental.API.csproj", "{FC6A55FE-A6E1-4335-8B02-FD70834229CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmentRental.UI", "EquipmentRental.UI\EquipmentRental.UI.csproj", "{C67A4649-BA5D-4323-A6BD-6793A42D70E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FC6A55FE-A6E1-4335-8B02-FD70834229CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6A55FE-A6E1-4335-8B02-FD70834229CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6A55FE-A6E1-4335-8B02-FD70834229CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67A4649-BA5D-4323-A6BD-6793A42D70E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67A4649-BA5D-4323-A6BD-6793A42D70E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67A4649-BA5D-4323-A6BD-6793A42D70E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67A4649-BA5D-4323-A6BD-6793A42D70E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
