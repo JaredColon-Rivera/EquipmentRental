@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "app-equipmentrental-eastus-dev-001",
+      "defaultValue": "app-equipmentrental-eastus-dev-001-UI",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }
