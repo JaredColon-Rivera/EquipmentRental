@@ -27,6 +27,9 @@
                 <td>@customer.LastName</td>
                 <td>@customer.Email</td>
                 <td>@customer.PhoneNumber</td>
+                <td>
+                    <a asp-controller="Customers" asp-action="EditCustomer" asp-route-id="@customer.Id" class="btn btn-light">Edit</a>
+                </td>
             </tr>
         }
     </tbody>
