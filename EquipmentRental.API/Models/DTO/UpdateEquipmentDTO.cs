@@ -17,9 +17,13 @@ namespace EquipmentRental.API.Models.DTO
         public double Price { get; set; }
        
         [Required]
-        public Boolean Rented { get; set; }
+        public bool Rented { get; set; }
 
-        public Guid? CustomerId { get; set; }
-        public Guid LocationId { get; set; }
+        //public Guid? CustomerId { get; set; }
+        //public Guid LocationId { get; set; }
+
+        public CustomerDTO? Customer { get; set; }
+        public LocationDTO Location { get; set; }
+
     }
 }

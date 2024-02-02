@@ -1,5 +1,5 @@
 ﻿using EquipmentRental.UI.Models;
-using EquipmentRental.UI.Models.DTOs;
+using EquipmentRental.UI.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
 using System.Text;
@@ -103,7 +103,7 @@ namespace EquipmentRental.UI.Controllers
 
             var response = await httpResponseMessage.Content.ReadFromJsonAsync<CustomerDTO>();
 
-            if (response is not null) return RedirectToAction("EditCustomer", "Customers");
+            if (response is not null) return RedirectToAction("Index", "Customers");
 
             return View();
 

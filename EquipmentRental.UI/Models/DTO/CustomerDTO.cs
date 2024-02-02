@@ -1,4 +1,4 @@
-﻿namespace EquipmentRental.UI.Models.DTOs
+﻿namespace EquipmentRental.UI.Models.DTO
 {
     public class CustomerDTO
     {
