@@ -41,7 +41,7 @@ namespace EquipmentRental.API.Repositories
             existingEquipment.Price = equipment.Price;
             existingEquipment.Rented = equipment.Rented;
             existingEquipment.CustomerId = equipment.CustomerId;
-            existingEquipment.LocationId = equipment.LocationId;
+            existingEquipment.CustomerId = equipment.CustomerId;
 
             await dbContext.SaveChangesAsync();
             return existingEquipment;
@@ -49,7 +49,7 @@ namespace EquipmentRental.API.Repositories
 
         public async Task<Equipment?> DeleteEquipmentRentalAsync(Guid id)
         {
-            var existingEquipment = await GetEquipmentRentalByIdAsync(id);
+            var existingEquipment = await dbContext.EquipmentRentals.FirstOrDefaultAsync(x => x.Id == id);
 
             if (existingEquipment == null) return null;
 
